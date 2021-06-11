@@ -21,19 +21,25 @@ namespace BelikovXO
             Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(_world);
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_systems);
 #endif
+
+            var gameState = new GameState();
+
             _systems
                 // register your systems here, for example:
                 .Add(new InitializeFieldSystem())
                 .Add(new CellViewSystem())
                 .Add(new CameraFocusOnFieldSystem())
+                .Add(new ControlSystem())
+                .Add(new AnalyzeClickSystem())
 
                 // register one-frame components (order is important), for example:
-                // .OneFrame<TestComponent1> ()
-                // .OneFrame<TestComponent2> ()
+                .OneFrame<UpdateCameraEvent>()
+                .OneFrame<Clicked>()
 
                 // inject service instances here (order doesn't important), for example:
                 .Inject(configuration)
                 .Inject(sceneData)
+                .Inject(gameState)
                 // .Inject (new NavMeshSupport ())
                 .Init();
         }

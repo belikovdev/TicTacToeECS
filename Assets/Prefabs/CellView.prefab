@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2550058036617380361}
   - component: {fileID: 5002939599082968088}
+  - component: {fileID: 6668104653418981043}
   m_Layer: 0
   m_Name: CellView
   m_TagString: Untagged
@@ -44,6 +45,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a011d1c116be66a4688e9e6af9a60ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &6668104653418981043
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317947455343602649}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &4200914300744781254
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,8 @@ namespace BelikovXO {
 
                 cellView.transform.position = new Vector3(pos.Value.x + _configuration.offset * pos.Value.x, pos.Value.y + _configuration.offset * pos.Value.y);
 
+                cellView.entity = _cells.GetEntity(index);
+
                 _cells.GetEntity(index).Get<CellViewRef>().Value = cellView;
             }
         }
