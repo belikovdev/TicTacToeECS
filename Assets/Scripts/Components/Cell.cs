@@ -1,5 +1,5 @@
 using Leopotam.Ecs;
 
 namespace BelikovXO {
-    struct Cell : IEcsIgnoreInFilter { }
+    public struct Cell : IEcsIgnoreInFilter { }
 }
