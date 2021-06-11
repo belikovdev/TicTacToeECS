@@ -9,7 +9,7 @@ namespace BelikovXO {
         
         void IEcsRunSystem.Run () {
             // add your run code here.
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 var cam = _sceneData.camera;
                 var ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -18,6 +18,7 @@ namespace BelikovXO {
                     var cellView = hitInfo.collider.GetComponent<CellView>();
                     if (cellView)
                     {
+                        Debug.Log("Clicked");
                         cellView.entity.Get<Clicked>();
                     }
                 }
