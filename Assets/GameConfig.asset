@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellView: {fileID: 5002939599082968088, guid: 89e5bee2b2cb7ac4dad0751b0bda99d9,
     type: 3}
+  OView: {fileID: 4630353788712860305, guid: b9370ae64d01d804694e715e244a597c, type: 3}
+  XView: {fileID: 1365438695182858637, guid: fa99fc909d58e2345b6ae5fa193b4be8, type: 3}
   size: 3
+  chainSize: 3
   offset: 0.5

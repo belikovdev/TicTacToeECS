@@ -1,10 +1,12 @@
 using Leopotam.Ecs;
+using UnityEngine;
+using System;
 
 namespace BelikovXO {
     sealed class AnalyzeClickSystem : IEcsRunSystem {
         // auto-injected fields.
         readonly EcsWorld _world = null;
-        readonly EcsFilter<Cell, Clicked>.Exclude<Taken> _clickedCells;
+        readonly EcsFilter<Cell, Clicked, Position>.Exclude<Taken> _clickedCells;
         readonly GameState _gameState;
         
         void IEcsRunSystem.Run () {
@@ -13,6 +15,8 @@ namespace BelikovXO {
             {
                 var entity = _clickedCells.GetEntity(index);
                 entity.Get<Taken>().value = _gameState.currentTurn;
+                _gameState.turnsHistory.Add(entity.Get<Position>().value);
+                entity.Get<CheckWinEvent>();
                 entity.Get<NextTurn>();
             }
         }

@@ -6,6 +6,7 @@ namespace BelikovXO {
         // auto-injected fields.
         readonly EcsWorld _world = null;
         readonly Configuration _configuration;
+        readonly GameState _gameState;
         
         public void Init () {
             // add your initialize code here.
@@ -17,7 +18,9 @@ namespace BelikovXO {
                 {
                     var cellEntity = _world.NewEntity();
                     cellEntity.Get<Cell>();
-                    cellEntity.Get<Position>().Value = new Vector2Int(x, y);
+                    var fieldPos = new Vector2Int(x, y);
+                    cellEntity.Get<Position>().value = fieldPos;
+                    _gameState.field[fieldPos] = cellEntity;
                 }
             }
 

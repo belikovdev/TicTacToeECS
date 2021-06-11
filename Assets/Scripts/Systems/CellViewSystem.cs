@@ -18,11 +18,11 @@ namespace BelikovXO {
                 ref var pos = ref _cells.Get2(index);
                 var cellView = Object.Instantiate(_configuration.cellView);
 
-                cellView.transform.position = new Vector3(pos.Value.x + _configuration.offset * pos.Value.x, pos.Value.y + _configuration.offset * pos.Value.y);
+                cellView.transform.position = new Vector3(pos.value.x + _configuration.offset * pos.value.x, pos.value.y + _configuration.offset * pos.value.y);
 
                 cellView.entity = _cells.GetEntity(index);
 
-                _cells.GetEntity(index).Get<CellViewRef>().Value = cellView;
+                _cells.GetEntity(index).Get<CellViewRef>().value = cellView;
             }
         }
     }

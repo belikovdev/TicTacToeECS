@@ -32,11 +32,14 @@ namespace BelikovXO
                 .Add(new ControlSystem())
                 .Add(new AnalyzeClickSystem())
                 .Add(new NextTurnSystem())
+                .Add(new TakenViewSystem())
+                .Add(new CheckWinSystem())
 
                 // register one-frame components (order is important), for example:
                 .OneFrame<UpdateCameraEvent>()
                 .OneFrame<Clicked>()
                 .OneFrame<NextTurn>()
+                .OneFrame<CheckWinEvent>()
 
                 // inject service instances here (order doesn't important), for example:
                 .Inject(configuration)
