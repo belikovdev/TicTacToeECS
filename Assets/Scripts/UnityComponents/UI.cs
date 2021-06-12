@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneData : MonoBehaviour
+public class UI : MonoBehaviour
 {
-    public new Camera camera;
-    public UI UI;
+    public WinScreen winScreen;
 }

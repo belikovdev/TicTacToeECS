@@ -37,6 +37,7 @@ namespace BelikovXO
                 .Add(new NextTurnSystem())
                 .Add(new TakenViewSystem())
                 .Add(new CheckWinSystem())
+                .Add(new WinSystem())
 
                 // register one-frame components (order is important), for example:
                 .OneFrame<UpdateCameraEvent>()

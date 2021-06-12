@@ -23,7 +23,7 @@ namespace BelikovXO
 
                 var cam = _sceneData.camera;
 
-                cam.orthographicSize = size;
+                cam.orthographicSize = size + 2f;
 
                 cam.transform.position = new Vector3(size, size);
 

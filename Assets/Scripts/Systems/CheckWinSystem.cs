@@ -2,8 +2,6 @@ using Leopotam.Ecs;
 
 namespace BelikovXO {
     sealed class CheckWinSystem : IEcsRunSystem {
-        // auto-injected fields.
-        readonly EcsWorld _world = null;
         readonly Configuration _configuration;
         readonly GameState _gameState;
         readonly EcsFilter<Position, Taken, CheckWinEvent> _checkWin;

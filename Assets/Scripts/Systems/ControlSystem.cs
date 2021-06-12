@@ -3,8 +3,6 @@ using UnityEngine;
 
 namespace BelikovXO {
     sealed class ControlSystem : IEcsRunSystem {
-        // auto-injected fields.
-        readonly EcsWorld _world = null;
         private readonly SceneData _sceneData;
         
         void IEcsRunSystem.Run () {

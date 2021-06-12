@@ -4,8 +4,6 @@ using System;
 
 namespace BelikovXO {
     sealed class AnalyzeClickSystem : IEcsRunSystem {
-        // auto-injected fields.
-        readonly EcsWorld _world = null;
         readonly EcsFilter<Cell, Clicked, Position>.Exclude<Taken> _clickedCells;
         readonly GameState _gameState;
         

@@ -4,8 +4,6 @@ using UnityEngine;
 
 namespace BelikovXO {
     sealed class TakenViewSystem : IEcsRunSystem {
-        // auto-injected fields.
-        readonly EcsWorld _world = null;
         readonly Configuration _configuration;
         readonly EcsFilter<Taken, CellViewRef>.Exclude<TakenViewRef> _takenCells;
         

@@ -3,9 +3,6 @@ using UnityEngine;
 
 namespace BelikovXO {
     sealed class CellViewSystem : IEcsRunSystem {
-        // auto-injected fields.
-        readonly EcsWorld _world = null;
-
         private readonly EcsFilter<Cell, Position>.Exclude<CellViewRef> _cells = null;
         private readonly Configuration _configuration = null;
         
