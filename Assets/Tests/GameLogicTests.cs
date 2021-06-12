@@ -45,18 +45,7 @@ namespace Tests
         {
             var world = new EcsWorld();
 
-            Dictionary<Vector2Int, EcsEntity> cells = new Dictionary<Vector2Int, EcsEntity>()
-            {
-                {new Vector2Int(0, 0), CreateCell(world,new Vector2Int(0,0))},
-                {new Vector2Int(0, 1), CreateCell(world,new Vector2Int(0,1))},
-                {new Vector2Int(0, 2), CreateCell(world,new Vector2Int(0,2))},
-                {new Vector2Int(1, 0), CreateCell(world,new Vector2Int(1,0))},
-                {new Vector2Int(1, 1), CreateCell(world,new Vector2Int(1,1))},
-                {new Vector2Int(1, 2), CreateCell(world,new Vector2Int(1,2))},
-                {new Vector2Int(2, 0), CreateCell(world,new Vector2Int(2,0))},
-                {new Vector2Int(2, 1), CreateCell(world,new Vector2Int(2,1))},
-                {new Vector2Int(2, 2), CreateCell(world,new Vector2Int(2,2))},
-            };
+            Dictionary<Vector2Int, EcsEntity> cells = InitializeEmptyField(world);
 
             var chainLength = GameExtensions.GetLongestChain(cells, Vector2Int.zero);
 
@@ -68,18 +57,7 @@ namespace Tests
         {
             var world = new EcsWorld();
 
-            Dictionary<Vector2Int, EcsEntity> cells = new Dictionary<Vector2Int, EcsEntity>()
-            {
-                {new Vector2Int(0, 0), CreateCell(world,new Vector2Int(0,0))},
-                {new Vector2Int(0, 1), CreateCell(world,new Vector2Int(0,1))},
-                {new Vector2Int(0, 2), CreateCell(world,new Vector2Int(0,2))},
-                {new Vector2Int(1, 0), CreateCell(world,new Vector2Int(1,0))},
-                {new Vector2Int(1, 1), CreateCell(world,new Vector2Int(1,1))},
-                {new Vector2Int(1, 2), CreateCell(world,new Vector2Int(1,2))},
-                {new Vector2Int(2, 0), CreateCell(world,new Vector2Int(2,0))},
-                {new Vector2Int(2, 1), CreateCell(world,new Vector2Int(2,1))},
-                {new Vector2Int(2, 2), CreateCell(world,new Vector2Int(2,2))},
-            };
+            Dictionary<Vector2Int, EcsEntity> cells = InitializeEmptyField(world);
 
             cells[Vector2Int.zero].Get<Taken>().value = CellState.X;
 
@@ -93,18 +71,7 @@ namespace Tests
         {
             var world = new EcsWorld();
 
-            Dictionary<Vector2Int, EcsEntity> cells = new Dictionary<Vector2Int, EcsEntity>()
-            {
-                {new Vector2Int(0, 0), CreateCell(world,new Vector2Int(0,0))},
-                {new Vector2Int(0, 1), CreateCell(world,new Vector2Int(0,1))},
-                {new Vector2Int(0, 2), CreateCell(world,new Vector2Int(0,2))},
-                {new Vector2Int(1, 0), CreateCell(world,new Vector2Int(1,0))},
-                {new Vector2Int(1, 1), CreateCell(world,new Vector2Int(1,1))},
-                {new Vector2Int(1, 2), CreateCell(world,new Vector2Int(1,2))},
-                {new Vector2Int(2, 0), CreateCell(world,new Vector2Int(2,0))},
-                {new Vector2Int(2, 1), CreateCell(world,new Vector2Int(2,1))},
-                {new Vector2Int(2, 2), CreateCell(world,new Vector2Int(2,2))},
-            };
+            Dictionary<Vector2Int, EcsEntity> cells = InitializeEmptyField(world);
 
             cells[new Vector2Int(2, 0)].Get<Taken>().value = CellState.X;
             cells[new Vector2Int(1, 0)].Get<Taken>().value = CellState.X;
@@ -119,18 +86,7 @@ namespace Tests
         {
             var world = new EcsWorld();
 
-            Dictionary<Vector2Int, EcsEntity> cells = new Dictionary<Vector2Int, EcsEntity>()
-            {
-                {new Vector2Int(0, 0), CreateCell(world,new Vector2Int(0,0))},
-                {new Vector2Int(0, 1), CreateCell(world,new Vector2Int(0,1))},
-                {new Vector2Int(0, 2), CreateCell(world,new Vector2Int(0,2))},
-                {new Vector2Int(1, 0), CreateCell(world,new Vector2Int(1,0))},
-                {new Vector2Int(1, 1), CreateCell(world,new Vector2Int(1,1))},
-                {new Vector2Int(1, 2), CreateCell(world,new Vector2Int(1,2))},
-                {new Vector2Int(2, 0), CreateCell(world,new Vector2Int(2,0))},
-                {new Vector2Int(2, 1), CreateCell(world,new Vector2Int(2,1))},
-                {new Vector2Int(2, 2), CreateCell(world,new Vector2Int(2,2))},
-            };
+            Dictionary<Vector2Int, EcsEntity> cells = InitializeEmptyField(world);
 
             cells[new Vector2Int(2, 0)].Get<Taken>().value = CellState.X;
             cells[new Vector2Int(1, 0)].Get<Taken>().value = CellState.X;
@@ -145,18 +101,7 @@ namespace Tests
         {
             var world = new EcsWorld();
 
-            Dictionary<Vector2Int, EcsEntity> cells = new Dictionary<Vector2Int, EcsEntity>()
-            {
-                {new Vector2Int(0, 0), CreateCell(world,new Vector2Int(0,0))},
-                {new Vector2Int(0, 1), CreateCell(world,new Vector2Int(0,1))},
-                {new Vector2Int(0, 2), CreateCell(world,new Vector2Int(0,2))},
-                {new Vector2Int(1, 0), CreateCell(world,new Vector2Int(1,0))},
-                {new Vector2Int(1, 1), CreateCell(world,new Vector2Int(1,1))},
-                {new Vector2Int(1, 2), CreateCell(world,new Vector2Int(1,2))},
-                {new Vector2Int(2, 0), CreateCell(world,new Vector2Int(2,0))},
-                {new Vector2Int(2, 1), CreateCell(world,new Vector2Int(2,1))},
-                {new Vector2Int(2, 2), CreateCell(world,new Vector2Int(2,2))},
-            };
+            Dictionary<Vector2Int, EcsEntity> cells = InitializeEmptyField(world);
 
             cells[new Vector2Int(0, 0)].Get<Taken>().value = CellState.X;
             cells[new Vector2Int(0, 1)].Get<Taken>().value = CellState.X;
@@ -171,18 +116,7 @@ namespace Tests
         {
             var world = new EcsWorld();
 
-            Dictionary<Vector2Int, EcsEntity> cells = new Dictionary<Vector2Int, EcsEntity>()
-            {
-                {new Vector2Int(0, 0), CreateCell(world,new Vector2Int(0,0))},
-                {new Vector2Int(0, 1), CreateCell(world,new Vector2Int(0,1))},
-                {new Vector2Int(0, 2), CreateCell(world,new Vector2Int(0,2))},
-                {new Vector2Int(1, 0), CreateCell(world,new Vector2Int(1,0))},
-                {new Vector2Int(1, 1), CreateCell(world,new Vector2Int(1,1))},
-                {new Vector2Int(1, 2), CreateCell(world,new Vector2Int(1,2))},
-                {new Vector2Int(2, 0), CreateCell(world,new Vector2Int(2,0))},
-                {new Vector2Int(2, 1), CreateCell(world,new Vector2Int(2,1))},
-                {new Vector2Int(2, 2), CreateCell(world,new Vector2Int(2,2))},
-            };
+            Dictionary<Vector2Int, EcsEntity> cells = InitializeEmptyField(world);
 
             cells[new Vector2Int(0, 0)].Get<Taken>().value = CellState.X;
             cells[new Vector2Int(0, 1)].Get<Taken>().value = CellState.X;
@@ -198,18 +132,7 @@ namespace Tests
         {
             var world = new EcsWorld();
 
-            Dictionary<Vector2Int, EcsEntity> cells = new Dictionary<Vector2Int, EcsEntity>()
-            {
-                {new Vector2Int(0, 0), CreateCell(world,new Vector2Int(0,0))},
-                {new Vector2Int(0, 1), CreateCell(world,new Vector2Int(0,1))},
-                {new Vector2Int(0, 2), CreateCell(world,new Vector2Int(0,2))},
-                {new Vector2Int(1, 0), CreateCell(world,new Vector2Int(1,0))},
-                {new Vector2Int(1, 1), CreateCell(world,new Vector2Int(1,1))},
-                {new Vector2Int(1, 2), CreateCell(world,new Vector2Int(1,2))},
-                {new Vector2Int(2, 0), CreateCell(world,new Vector2Int(2,0))},
-                {new Vector2Int(2, 1), CreateCell(world,new Vector2Int(2,1))},
-                {new Vector2Int(2, 2), CreateCell(world,new Vector2Int(2,2))},
-            };
+            Dictionary<Vector2Int, EcsEntity> cells = InitializeEmptyField(world);
 
             cells[new Vector2Int(0, 0)].Get<Taken>().value = CellState.X;
             cells[new Vector2Int(1, 1)].Get<Taken>().value = CellState.X;
@@ -225,18 +148,7 @@ namespace Tests
         {
             var world = new EcsWorld();
 
-            Dictionary<Vector2Int, EcsEntity> cells = new Dictionary<Vector2Int, EcsEntity>()
-            {
-                {new Vector2Int(0, 0), CreateCell(world,new Vector2Int(0,0))},
-                {new Vector2Int(0, 1), CreateCell(world,new Vector2Int(0,1))},
-                {new Vector2Int(0, 2), CreateCell(world,new Vector2Int(0,2))},
-                {new Vector2Int(1, 0), CreateCell(world,new Vector2Int(1,0))},
-                {new Vector2Int(1, 1), CreateCell(world,new Vector2Int(1,1))},
-                {new Vector2Int(1, 2), CreateCell(world,new Vector2Int(1,2))},
-                {new Vector2Int(2, 0), CreateCell(world,new Vector2Int(2,0))},
-                {new Vector2Int(2, 1), CreateCell(world,new Vector2Int(2,1))},
-                {new Vector2Int(2, 2), CreateCell(world,new Vector2Int(2,2))},
-            };
+            Dictionary<Vector2Int, EcsEntity> cells = InitializeEmptyField(world);
 
             cells[new Vector2Int(0, 2)].Get<Taken>().value = CellState.X;
             cells[new Vector2Int(1, 1)].Get<Taken>().value = CellState.X;
@@ -254,6 +166,22 @@ namespace Tests
             entity.Get<Cell>();
 
             return entity;
+        }
+
+        private static Dictionary<Vector2Int, EcsEntity> InitializeEmptyField(EcsWorld world)
+        {
+            return new Dictionary<Vector2Int, EcsEntity>()
+            {
+                {new Vector2Int(0, 0), CreateCell(world,new Vector2Int(0,0))},
+                {new Vector2Int(0, 1), CreateCell(world,new Vector2Int(0,1))},
+                {new Vector2Int(0, 2), CreateCell(world,new Vector2Int(0,2))},
+                {new Vector2Int(1, 0), CreateCell(world,new Vector2Int(1,0))},
+                {new Vector2Int(1, 1), CreateCell(world,new Vector2Int(1,1))},
+                {new Vector2Int(1, 2), CreateCell(world,new Vector2Int(1,2))},
+                {new Vector2Int(2, 0), CreateCell(world,new Vector2Int(2,0))},
+                {new Vector2Int(2, 1), CreateCell(world,new Vector2Int(2,1))},
+                {new Vector2Int(2, 2), CreateCell(world,new Vector2Int(2,2))},
+            };
         }
     }
 }
