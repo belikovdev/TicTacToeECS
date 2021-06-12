@@ -16,6 +16,8 @@ MonoBehaviour:
     type: 3}
   OView: {fileID: 4630353788712860305, guid: b9370ae64d01d804694e715e244a597c, type: 3}
   XView: {fileID: 1365438695182858637, guid: fa99fc909d58e2345b6ae5fa193b4be8, type: 3}
+  background: {fileID: 5252430428672262667, guid: 9b305e4007ae6fb4b8be37749882abef,
+    type: 3}
   size: 3
   chainSize: 3
   offset: 0.5

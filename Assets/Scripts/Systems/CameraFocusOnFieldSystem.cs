@@ -1,5 +1,6 @@
 using Leopotam.Ecs;
 using UnityEngine;
+using System.Linq;
 
 namespace BelikovXO
 {
@@ -25,6 +26,8 @@ namespace BelikovXO
                 cam.orthographicSize = size;
 
                 cam.transform.position = new Vector3(size, size);
+
+                _world.NewEntity().Get<InitBackgroundEvent>();
             }
         }
     }

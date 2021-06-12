@@ -25,10 +25,13 @@ namespace BelikovXO
             var gameState = new GameState();
 
             _systems
-                // register your systems here, for example:
+                // init
                 .Add(new InitializeFieldSystem())
+
+                // run
                 .Add(new CellViewSystem())
                 .Add(new CameraFocusOnFieldSystem())
+                .Add(new InitializeBackgroundSystem())
                 .Add(new ControlSystem())
                 .Add(new AnalyzeClickSystem())
                 .Add(new NextTurnSystem())
@@ -37,6 +40,7 @@ namespace BelikovXO
 
                 // register one-frame components (order is important), for example:
                 .OneFrame<UpdateCameraEvent>()
+                .OneFrame<InitBackgroundEvent>()
                 .OneFrame<Clicked>()
                 .OneFrame<NextTurn>()
                 .OneFrame<CheckWinEvent>()
