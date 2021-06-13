@@ -4,9 +4,14 @@ using UnityEngine;
 namespace BelikovXO {
     sealed class ControlSystem : IEcsRunSystem {
         private readonly SceneData _sceneData;
+        readonly EcsFilter<ComputerTurn> _computerTurn;
         
         void IEcsRunSystem.Run () {
-            // add your run code here.
+            if (!_computerTurn.IsEmpty())
+            {
+                return;
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
                 var cam = _sceneData.camera;
@@ -16,7 +21,6 @@ namespace BelikovXO {
                     var cellView = hitInfo.collider.GetComponent<CellView>();
                     if (cellView)
                     {
-                        Debug.Log("Clicked");
                         cellView.entity.Get<Clicked>();
                     }
                 }

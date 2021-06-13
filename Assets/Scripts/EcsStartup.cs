@@ -34,6 +34,7 @@ namespace BelikovXO
                 .Add(new InitializeBackgroundSystem())
                 .Add(new ControlSystem())
                 .Add(new AnalyzeClickSystem())
+                .Add(new ComputerLogicSystem())
                 .Add(new NextTurnSystem())
                 .Add(new TakenViewSystem())
                 .Add(new CheckWinSystem())
@@ -80,7 +81,7 @@ namespace BelikovXO
 
         public void OnPlayerVsComputerClick()
         {
-
+            _world.NewEntity().Get<PlayerVsComputer>();
         }
 
         public void OnExitClick()

@@ -9,10 +9,12 @@ namespace BelikovXO {
         readonly GameState _gameState;
         readonly SceneData _sceneData;
         readonly EcsFilter<PlayerVsPlayer> _pvp;
+        readonly EcsFilter<PlayerVsComputer> _pvc;
         readonly EcsFilter<Cell> _cells;
         
-        public void Run () {
-            if (_pvp.IsEmpty())
+        public void Run ()
+        {
+            if (_pvp.IsEmpty() && _pvc.IsEmpty())
             {
                 return;
             }

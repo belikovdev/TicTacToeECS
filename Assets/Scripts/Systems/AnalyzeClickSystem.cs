@@ -11,7 +11,7 @@ namespace BelikovXO {
             // add your run code here.
             foreach (var index in _clickedCells)
             {
-                var entity = _clickedCells.GetEntity(index);
+                ref var entity = ref _clickedCells.GetEntity(index);
                 entity.Get<Taken>().value = _gameState.currentTurn;
                 _gameState.turnsHistory.Add(entity.Get<Position>().value);
                 entity.Get<CheckWinEvent>();
