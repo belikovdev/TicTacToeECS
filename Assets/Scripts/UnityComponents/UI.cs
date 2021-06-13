@@ -5,4 +5,5 @@ using UnityEngine;
 public class UI : MonoBehaviour
 {
     public WinScreen winScreen;
+    public StopwatchScreen stopwatchScreeen;
 }

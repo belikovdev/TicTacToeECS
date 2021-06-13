@@ -7,6 +7,7 @@ namespace BelikovXO {
         readonly EcsWorld _world = null;
         readonly Configuration _configuration;
         readonly GameState _gameState;
+        readonly SceneData _sceneData;
         
         public void Init () {
             // add your initialize code here.
@@ -25,6 +26,9 @@ namespace BelikovXO {
             }
 
             _world.NewEntity().Get<UpdateCameraEvent>();
+            _world.NewEntity().Get<Stopwatch>();
+            _sceneData.UI.stopwatchScreeen.Show(true);
+
         }
     }
 }

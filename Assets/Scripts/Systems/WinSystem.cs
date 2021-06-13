@@ -1,4 +1,6 @@
 using Leopotam.Ecs;
+using System.Linq;
+using System.Collections;
 
 namespace BelikovXO {
     sealed class WinSystem : IEcsRunSystem {
@@ -7,12 +9,16 @@ namespace BelikovXO {
         readonly SceneData _sceneData;
         
         void IEcsRunSystem.Run () {
-            foreach (var index in _winners)
+            if (!_sceneData.UI.winScreen.gameObject.activeInHierarchy)
             {
-                ref var winnerState = ref _winners.Get2(index).value;
+                foreach (var index in _winners)
+                {
+                    ref var winnerState = ref _winners.Get2(index).value;
 
-                _sceneData.UI.winScreen.Show(true);
-                _sceneData.UI.winScreen.SetWinner(winnerState);
+                    _sceneData.UI.winScreen.Show(true);
+                    _sceneData.UI.winScreen.SetWinner(winnerState);
+                    _winners.GetEntity(index).Get<GameFinished>();
+                }
             }
         }
     }
