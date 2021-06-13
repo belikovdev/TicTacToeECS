@@ -22,6 +22,7 @@ namespace BelikovXO
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_systems);
 #endif
 
+
             var gameState = new GameState();
 
             _systems
@@ -34,19 +35,20 @@ namespace BelikovXO
                 .Add(new InitializeBackgroundSystem())
                 .Add(new ControlSystem())
                 .Add(new AnalyzeTurnSystem())
-                //.Add(new ComputerLogicSystem())
                 .Add(new NextTurnSystem())
                 .Add(new TakenViewSystem())
                 .Add(new CheckWinSystem())
                 .Add(new WinSystem())
                 .Add(new DrawSystem())
                 .Add(new StopwatchSystem())
+                .Add(new UndoSystem())
 
                 // register one-frame components (order is important), for example:
                 .OneFrame<UpdateCameraEvent>()
                 .OneFrame<InitBackgroundEvent>()
                 .OneFrame<Clicked>()
                 .OneFrame<NextTurn>()
+                .OneFrame<UndoEvent>()
                 .OneFrame<CheckWinEvent>()
                 .OneFrame<GameFinished>()
 
@@ -56,6 +58,10 @@ namespace BelikovXO
                 .Inject(gameState)
                 // .Inject (new NavMeshSupport ())
                 .Init();
+
+            // explicit setting world can be avoided with another UnityPackage for ecs-ui but
+            // I keep it here to make it more simple
+            sceneData.UI.undoScreen.world = _world;
         }
 
         void Update()
@@ -82,6 +88,7 @@ namespace BelikovXO
         public void OnPlayerVsComputerClick()
         {
             _world.NewEntity().Get<PlayerVsComputer>();
+            sceneData.UI.undoScreen.Show(true);
         }
 
         public void OnExitClick()

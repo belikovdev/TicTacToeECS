@@ -16,7 +16,6 @@ namespace BelikovXO {
             {
                 if (!_pvc.IsEmpty() && _ct.IsEmpty())
                 {
-                    Debug.Log("Computer turn");
                     _world.NewEntity().Get<ComputerTurn>();
                 }
                 else if (!_ct.IsEmpty())
@@ -28,7 +27,6 @@ namespace BelikovXO {
                 }
 
                 _gameState.currentTurn = _gameState.currentTurn == CellState.X ? CellState.O : CellState.X;
-                Debug.Log($"Next turn: {_gameState.currentTurn}");
             }
         }
     }
