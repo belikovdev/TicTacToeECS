@@ -72,5 +72,20 @@ namespace BelikovXO
                 _world = null;
             }
         }
+
+        public void OnPlayerVsPlayerClick()
+        {
+            _world.NewEntity().Get<PlayerVsPlayer>();
+        }
+
+        public void OnPlayerVsComputerClick()
+        {
+
+        }
+
+        public void OnExitClick()
+        {
+
+        }
     }
 }

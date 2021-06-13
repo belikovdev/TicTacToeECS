@@ -5,10 +5,15 @@ using System.Collections;
 namespace BelikovXO {
     sealed class WinSystem : IEcsRunSystem {
         //readonly EcsWorld _world = null;
+        readonly EcsFilter<PlayerVsPlayer> _pvp;
         readonly EcsFilter<Winner, Taken> _winners;
         readonly SceneData _sceneData;
         
         void IEcsRunSystem.Run () {
+            if (_pvp.IsEmpty())
+            {
+                return;
+            }
             if (!_sceneData.UI.winScreen.gameObject.activeInHierarchy)
             {
                 foreach (var index in _winners)

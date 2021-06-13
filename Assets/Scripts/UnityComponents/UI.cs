@@ -6,4 +6,5 @@ public class UI : MonoBehaviour
 {
     public WinScreen winScreen;
     public StopwatchScreen stopwatchScreeen;
+    public MainMenuScreen mainMenuScreen;
 }
