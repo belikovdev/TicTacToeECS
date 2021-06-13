@@ -5,10 +5,24 @@ namespace BelikovXO {
     sealed class ControlSystem : IEcsRunSystem {
         private readonly SceneData _sceneData;
         readonly EcsFilter<ComputerTurn> _computerTurn;
-        
+        readonly EcsFilter<Cell, Position>.Exclude<Taken> _freeCells;
+        readonly EcsFilter<Winner> _winners;
+        readonly EcsFilter<GameFinished> _gameFinished;
+
         void IEcsRunSystem.Run () {
+            if (!_gameFinished.IsEmpty() || !_winners.IsEmpty())
+            {
+                return;
+            }
+
             if (!_computerTurn.IsEmpty())
             {
+                var count = _freeCells.GetEntitiesCount();
+                var nextTurnCellIndex = Random.Range(0, count);
+                var entity = _freeCells.GetEntity(nextTurnCellIndex);
+
+                entity.Get<Clicked>();
+
                 return;
             }
 
