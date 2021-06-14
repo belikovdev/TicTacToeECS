@@ -1,7 +1,7 @@
 ManifestFileVersion: 0
-CRC: 2253986429
+CRC: 2191963972
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: belikovassets/test2
+      Name: belikovassets/testbundle
       Dependencies: {}

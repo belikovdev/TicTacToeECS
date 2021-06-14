@@ -11,7 +11,7 @@ public class FirstEditorWindow : EditorWindow
     Texture crossTexture;
     Texture backgroundTexture;
 
-    [MenuItem("Window/My Window")]
+    [MenuItem("Belikovdev/Create Asset Bundle")]
     public static void ShowWindow()
     {
         GetWindow(typeof(FirstEditorWindow));
