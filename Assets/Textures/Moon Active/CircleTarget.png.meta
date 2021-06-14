@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: bd30ced15dd1c4a81a8798331e1abe4a
+labels:
+- BelikovAssets/MyBundle
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,5 +138,5 @@ TextureImporter:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: belikovassets/test2
   assetBundleVariant: 

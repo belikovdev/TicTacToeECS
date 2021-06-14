@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 2253986429
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: belikovassets/test2
+      Dependencies: {}
