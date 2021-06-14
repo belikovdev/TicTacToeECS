@@ -2,15 +2,27 @@ using Leopotam.Ecs;
 using UnityEngine;
 
 namespace BelikovXO {
-    sealed class InitializeFieldSystem : IEcsInitSystem {
+    sealed class InitializeFieldSystem : IEcsRunSystem {
         // auto-injected fields.
         readonly EcsWorld _world = null;
         readonly Configuration _configuration;
         readonly GameState _gameState;
+        readonly SceneData _sceneData;
+        readonly EcsFilter<PlayerVsPlayer> _pvp;
+        readonly EcsFilter<PlayerVsComputer> _pvc;
+        readonly EcsFilter<Cell> _cells;
         
-        public void Init () {
-            // add your initialize code here.
-            ref var board = ref _world.NewEntity().Get<Field>();
+        public void Run ()
+        {
+            if (_pvp.IsEmpty() && _pvc.IsEmpty())
+            {
+                return;
+            }
+
+            if (!_cells.IsEmpty())
+            {
+                return;
+            }
 
             for (int x = 0; x < _configuration.size; x++)
             {
@@ -25,6 +37,9 @@ namespace BelikovXO {
             }
 
             _world.NewEntity().Get<UpdateCameraEvent>();
+            _world.NewEntity().Get<Stopwatch>();
+            _sceneData.UI.stopwatchScreeen.Show(true);
+            _sceneData.UI.mainMenuScreen.Show(false);
         }
     }
 }

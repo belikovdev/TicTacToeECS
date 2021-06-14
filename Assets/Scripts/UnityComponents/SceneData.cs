@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class SceneData : MonoBehaviour
 {
-    public Camera camera;
+    public new Camera camera;
+    public UI UI;
 }

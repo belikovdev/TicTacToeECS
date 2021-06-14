@@ -1,5 +1,5 @@
 namespace BelikovXO {
-    struct Taken {
+    public struct Taken {
         // add your data here.
         public CellState value;
     }

@@ -3,12 +3,29 @@ using UnityEngine;
 
 namespace BelikovXO {
     sealed class ControlSystem : IEcsRunSystem {
-        // auto-injected fields.
-        readonly EcsWorld _world = null;
         private readonly SceneData _sceneData;
-        
+        readonly EcsFilter<ComputerTurn> _computerTurn;
+        readonly EcsFilter<Cell, Position>.Exclude<Taken> _freeCells;
+        readonly EcsFilter<Winner> _winners;
+        readonly EcsFilter<GameFinished> _gameFinished;
+
         void IEcsRunSystem.Run () {
-            // add your run code here.
+            if (!_gameFinished.IsEmpty() || !_winners.IsEmpty())
+            {
+                return;
+            }
+
+            if (!_computerTurn.IsEmpty())
+            {
+                var count = _freeCells.GetEntitiesCount();
+                var nextTurnCellIndex = Random.Range(0, count);
+                var entity = _freeCells.GetEntity(nextTurnCellIndex);
+
+                entity.Get<Clicked>();
+
+                return;
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
                 var cam = _sceneData.camera;
@@ -18,7 +35,6 @@ namespace BelikovXO {
                     var cellView = hitInfo.collider.GetComponent<CellView>();
                     if (cellView)
                     {
-                        Debug.Log("Clicked");
                         cellView.entity.Get<Clicked>();
                     }
                 }
