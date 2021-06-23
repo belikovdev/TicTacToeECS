@@ -3,6 +3,10 @@
 
 ----
 
+![image](https://user-images.githubusercontent.com/47883756/123069906-eff5c900-d41b-11eb-820a-89b102bc2f11.png)
+
+----
+
 ### Features
 - Implemented using [LeoECS](https://github.com/Leopotam/ecs) (Entity Component System library).
 - Has 2 game modes: "Player vs Player" and "Player vs Computer".
